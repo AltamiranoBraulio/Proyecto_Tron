@@ -18,3 +18,6 @@ En caso de colisión, el juego te dirá: ¡Game Over!
 Después de cada partida, se te preguntará si deseas comenzar una nueva. ¡La diversión nunca termina!
 ¡Disfruta de Tron y demuestra quién es el maestro de las motos de luz!
 
+Autores:
+Braulio Santiago Altamirano López
+Joaquin Monroy Navarro 
