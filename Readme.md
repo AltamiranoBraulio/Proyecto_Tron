@@ -15,16 +15,27 @@ Utiliza las teclas de dirección para cambiar de dirección y evitar obstáculos
 ¡Cuidado!  contra el rastro que deja el otro jugador cuando tocas las orillas del la ventana apareceras en el lado contrario.
 
 El jugador 1 de color naranja se moverá con las teclas:
+
 w - Arriba
+
 s - Abajo
+
 d - Derecha
+
 a - Izquierda
 
+
+
 El jugador 2 de color azúl se moverá con las teclas:
+
 ^ - Arriba
+
  - Abajo
+
 > - Derecha
+
 < - Izquierda
+
 
 Puntuación:
 
@@ -35,10 +46,20 @@ Solo cierra el juego para salir
 
 DiagramaPlantUML.png
 ![Diagrama de clases](resources/DiagramaPlantUML.png)
+
+
+
+
 Autores:
 Braulio Santiago Altamirano López 22310243
 
 
 Joaquin Monroy Navarro 22310267
+
+## Créditos
+
+Este proyecto utiliza código de las siguientes fuentes:
+
+- Parte del código de [KarolZajac] fue adaptado de [https://github.com/KarolZajac/TronGame.git].
 
 
