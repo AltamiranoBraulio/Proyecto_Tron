@@ -1,0 +1,95 @@
+@startuml
+
+class TronGame {
+    
+}
+
+class Player {
+    -xPosition: int
+    -yPosition: int
+    -score: int
+    -covered: int
+    +changePosition(int newX, int newY): void
+}
+
+class Board {
+    -W: int
+    -H: int
+    -size: int
+    -traceArray: int**
+    -background: Texture
+    -color1: Texture
+    -color2: Texture
+    +Board()
+    +Board(int width, int height, int size)
+    +loadTextures(): void
+    +create2DArray(int width, int height): int**
+    +boardWrapping(Player &player1, Player &player2): void
+}
+
+class GameBar {
+    -font: Font
+    -p1Score: Text
+    -p2Score: Text
+    -p1Covered: Text
+    -p2Covered: Text
+    -timer: Text
+    +GameBar()
+    +loadFont(): Font
+    +updateTexts(Player &player1, Player &player2, float time): void
+    +setTextProperties(): void
+}
+
+class GameEngine {
+    -bar: GameBar
+    -board: Board
+    -player1: Player
+    -player2: Player
+    -gameTime: float
+    +GameEngine(Board board, Player p1, Player p2, float time)
+    +run(int mode): void
+    +initPlayers(): void
+    +updateMove(int &x1, int &x2, int &y1, int &y2): void
+    +checkCollision(int &x1, int &x2, int &y1, int &y2): bool
+    +saveTrace(): void
+    +checkWinner(): void
+    +nextRound(int &x1, int &x2, int &y1, int &y2, int mode): void
+    +moveHandle(int &x1, int &x2, int &y1, int &y2): void
+    +setBoardAndBar(): void
+}
+
+class Menu {
+    -selectedItemIndex: int
+    -font: Font
+    -menu: Text[MAX_NUMBER_OF_ITEMS]
+    -instruction: Text
+    -width: float
+    -height: float
+    +Menu(float width, float height)
+    +draw(RenderWindow &window): void
+    +moveLeft(): void
+    +moveRight(): void
+    +getPressedItem() const: int
+    +startMenu() const: int
+    +setProperties(): void
+}
+
+
+
+TronGame --* Menu
+Menu "1" --o "1" GameEngine
+GameEngine "1" --* "1" Board 
+GameEngine "1" --* "2" Player
+GameEngine "1" --* "1" GameBar
+
+GameEngine "1" ---o "1" Board
+GameEngine "1" ---o "2" Player
+GameEngine "1" ---o "1" GameBar
+
+Board "1" ---* "*" Player
+
+GameBar "1" ---o "*" Player
+
+
+
+@enduml
