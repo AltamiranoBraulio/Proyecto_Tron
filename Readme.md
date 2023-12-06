@@ -40,7 +40,7 @@ El jugador 2 de color azúl se moverá con las teclas:
 Puntuación:
 
 El juego llevará un conteo del puntaje de ambos jugadores en la parte superior.
-El juego se repetirá al infinito hasta que te cnases de ganar!!! 
+El juego se repetirá al infinito hasta que te canses de ganar!!! 
 Solo cierra el juego para salir
 ¡Disfruta de Tron y demuestra quién es el maestro de las motos de luz
 
