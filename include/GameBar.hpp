@@ -7,7 +7,8 @@
 
 using namespace sf;
 
-class GameBar {
+class GameBar
+{
 
 public:
     Font font;
@@ -26,4 +27,4 @@ public:
     void setTextProperties();
 };
 
-#endif //TRONGAME_GAMEBAR_H
+#endif // TRONGAME_GAMEBAR_H
