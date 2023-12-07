@@ -1,8 +1,9 @@
 @startuml
+class sf::Text
+class sf::Font
+class sf::RenderWindow
 
-class TronGame {
-    
-}
+
 
 class Player {
     -xPosition: int
@@ -76,20 +77,19 @@ class Menu {
 
 
 
-TronGame --* Menu
-Menu "1" --o "1" GameEngine
-GameEngine "1" --* "1" Board 
-GameEngine "1" --* "2" Player
-GameEngine "1" --* "1" GameBar
 
-GameEngine "1" ---o "1" Board
-GameEngine "1" ---o "2" Player
-GameEngine "1" ---o "1" GameBar
-
-Board "1" ---* "*" Player
-
-GameBar "1" ---o "*" Player
-
-
+GameEngine "1" *-- "1" Board 
+GameEngine "1" *-- "2" Player
+GameEngine "1" *-- "1" GameBar
+GameEngine "1" o-- "1" Board
+GameEngine "1" o-- "2" Player
+GameEngine "1" o-- "1" GameBar
+Board "1" o-- "*" Player
+GameBar "1" o-- "*" Player
+sf::Text --* GameBar 
+sf::Font --* GameBar
+Menu --* sf::Text
+Menu --* sf::Font
+Menu --o sf::RenderWindow
 
 @enduml
