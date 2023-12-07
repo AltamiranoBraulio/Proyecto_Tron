@@ -3,17 +3,23 @@
 #include <iomanip>
 #include <iostream>
 
-GameBar::GameBar() {
+GameBar::GameBar()
+{
     this->font = loadFont();
 }
 
-Font GameBar::loadFont() {
+Font GameBar::loadFont()
+{
     Font f;
-    if (!f.loadFromFile("fonts/CENTAUR.TTF")) { std::cout << "Cannot load font!"; }
+    if (!f.loadFromFile("fonts/CENTAUR.TTF"))
+    {
+        std::cout << "Cannot load font!";
+    }
     return f;
 }
 
-void GameBar::updateTexts(Player &player1, Player &player2, float time) {
+void GameBar::updateTexts(Player &player1, Player &player2, float time)
+{
     std::stringstream ss;
     ss << player1.score;
     std::string si;
@@ -39,7 +45,7 @@ void GameBar::updateTexts(Player &player1, Player &player2, float time) {
     std::string si5;
     ss5 >> si5;
 
-    //set new texts
+    // set new texts
     p1Score.setString("Wins: " + si);
     p2Score.setString("Wins: " + si2);
     p1Covered.setString("Covered: " + si3);
@@ -47,9 +53,10 @@ void GameBar::updateTexts(Player &player1, Player &player2, float time) {
     timer.setString("Time left: " + si5 + " s");
 }
 
-void GameBar::setTextProperties() {
+void GameBar::setTextProperties()
+{
 
-    //score
+    // score
     this->p1Score.setFont(this->font);
     this->p2Score.setFont(this->font);
     this->p1Score.setString("Wins: ");
@@ -57,7 +64,7 @@ void GameBar::setTextProperties() {
     this->p1Score.setFillColor(Color(255, 90, 0));
     this->p2Score.setFillColor(Color::Cyan);
 
-    //covered tiles
+    // covered tiles
     this->p1Covered.setFont(this->font);
     this->p2Covered.setFont(this->font);
     this->p1Covered.setString("Covered: ");
@@ -67,7 +74,7 @@ void GameBar::setTextProperties() {
     this->p1Covered.setCharacterSize(20);
     this->p2Covered.setCharacterSize(20);
 
-    //timer
+    // timer
     this->timer.setFont(this->font);
     this->timer.setFillColor(Color::White);
     this->timer.setCharacterSize(30);
