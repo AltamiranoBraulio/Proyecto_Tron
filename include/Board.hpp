@@ -8,21 +8,23 @@
 
 using namespace sf;
 
-class Board {
+class Board
+{
 
 public:
-    //board parameters
+    // board parameters
     int W{};
     int H{};
     int size{};
     int **traceArray{};
 
-    //textures
+    // textures
     Texture background;
     Texture color1;
     Texture color2;
 
-    Board() = default;;
+    Board() = default;
+    ;
 
     Board(int width, int height, int size);
 
@@ -31,9 +33,6 @@ public:
     static int **create2DArray(int width, int height);
 
     void boardWrapping(Player &player1, Player &player2) const;
-
-
 };
 
-
-#endif //TRONGAME_BOARD_H
+#endif // TRONGAME_BOARD_H
