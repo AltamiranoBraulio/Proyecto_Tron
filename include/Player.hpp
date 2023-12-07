@@ -11,7 +11,8 @@ public:
     int score;
     int covered;
 
-    Player() = default;;
+    Player() = default;
+    ;
 
     void changePosition(int x, int y);
 };
